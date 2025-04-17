@@ -1,0 +1,134 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Get Delivery Method"
+  },
+  "host" : "12.2.110.212",
+  "basePath" : "/ws/rest/K2",
+  "paths" : {
+    "/delivery_method_qa" : {
+      "get" : {
+        "summary" : "[K2] Get Delivery Method",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Deliverymethods"
+            }
+          },
+          "400" : {
+            "$ref" : "#/responses/400"
+          },
+          "401" : {
+            "$ref" : "#/responses/401"
+          },
+          "404" : {
+            "$ref" : "#/responses/404"
+          },
+          "413" : {
+            "$ref" : "#/responses/413"
+          },
+          "500" : {
+            "$ref" : "#/responses/500"
+          },
+          "503" : {
+            "$ref" : "#/responses/503"
+          },
+          "522" : {
+            "$ref" : "#/responses/522"
+          },
+          "default" : {
+            "$ref" : "#/responses/default"
+          }
+        }
+      }
+    }
+  },
+    "definitions": {
+        "Usitd62871K2Test": {
+            "description": "Model for Usitd62871K2Test",
+            "required": ["Del_Method"],
+            "properties": {
+                "Del_Method": {
+                    "type": "string"
+                },
+                "Del_Method_Name": {
+                    "type": "string"
+                }
+            }
+        },
+        "Deliverymethods": {
+            "description": "Model for Deliverymethods",
+            "required": ["USITD62871.K2TEST"],
+            "properties": {
+                "USITD62871.K2TEST": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Usitd62871K2Test"
+                    }
+                }
+            }
+        }
+    },
+  "responses" : {
+    "400" : {
+      "description" : "Bad Request - There are miscellaneous errors with the request, for example, mismatches between the request and what is allowed for the operation.",
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "401" : {
+      "description" : "Unauthorized or 403 Forbidden - Authentication errors.",
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "404" : {
+      "description" : "Not Found - Invalid URL path.",
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "413" : {
+      "description" : "Request Entity Too Large - The request data was too large. This is based on the SOA Input Size quota.",
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "500" : {
+      "description" : "Internal Server Error - This generic error message appears when an unexpected condition was encountered and a more specific message is not suitable.",
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "503" : {
+      "description" : "Service Unavailable - The caller has hit a throttle or the request was rejected because the Atom is starting or stopping.",
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "522" : {
+      "description" : "Connection Timed Out - This message is returned to the client when the SOA Worker Maximum Execution Time has been exceeded.",
+      "schema" : {
+        "type" : "string"
+      }
+    },
+    "default" : {
+      "description" : "Unidentified Exception",
+      "schema" : {
+        "type" : "string"
+      }
+    }
+  },
+  "schemes" : [ "http" ],
+  "securityDefinitions" : {
+    "basic" : {
+      "type" : "basic"
+    }
+  },
+  "security" : [ {
+    "basic" : [ ]
+  } ]
+}
