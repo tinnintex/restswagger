@@ -4,7 +4,7 @@
     "version" : "1.0",
     "title" : "Get Delivery Method"
   },
-  "host" : "12.2.110.212",
+  "host" : "12.2.110.212:9096",
   "basePath" : "/ws/rest/K2",
   "paths" : {
     "/delivery_method_qa" : {
